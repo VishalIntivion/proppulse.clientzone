@@ -1,0 +1,20 @@
+* {
+  /* background-color: black;
+  color: white; */
+}
+
+.login-page {
+  background-color: black;
+  /* background-image: url("/images/login.svg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* height: 100vh; */
+}
+
+/* .login-page .form-container { */
+/* position: absolute; */
+/* display: flex;
+  justify-content: end;
+  box-shadow: #305689, #4ea6cb, #7acadb, #32405e;
+  border-radius: 10px;
+} */
