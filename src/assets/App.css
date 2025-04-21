@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-Regular.ttf");
+}
+
+body {
+  color: white;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+  display: inline-block;
+  margin: 10px;
+}
+
+.language-dropdown .dropdown-toggle {
+  min-width: 150px;
+  text-align: left;
+  border: none;
+  color: white;
+}
+
+.language-dropdown ul li button:hover {
+  background-color: #305689;
+}
+
+.login-page {
+  background-image: url(/images/login.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .login-page {
+    background-image: none;
+    background-color: black;
+  }
+}
+
+.login-form {
+  font-family: "Poppins";
+  border-radius: 32px;
+  border: 1px solid #305689;
+  background: rgba(196, 196, 196, 0.01);
+  box-shadow: 0px 9.124px 14.337px -5.214px rgba(105, 187, 238, 0.5) inset,
+    0px -106.879px 88.631px -83.418px rgba(26, 39, 59, 0.2) inset,
+    0px 127.733px 130.34px -62.563px rgba(63, 125, 159, 0.3) inset,
+    0px 5.214px 23.461px 0px rgba(154, 146, 210, 0.3) inset;
+  backdrop-filter: blur(60px);
+}
+
+.form-fields {
+  padding: 15px 50px;
+}
+
+.form-fields input,
+.form-fields input:focus {
+  background-color: #1f3048;
+  color: white;
+  border: 1px solid #224667;
+  padding: 5px;
+}
+
+.sign-in-btn button {
+  background-color: #3395ff;
+}
