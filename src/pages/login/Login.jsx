@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import LanguageDropdown from "./Language";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { validateLoginForm } from "../../utils/validationUtils";
 
-function Login() {
+const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const togglePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
+  const validate = () => {
+    const formData = { email, password };
+    const newErrors = validateLoginForm(formData);
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted with:", { email, password });
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="container">
@@ -19,51 +45,108 @@ function Login() {
                   <h4>Welcome Back</h4>
                   <p>Please enter your details to sign in</p>
                 </div>
-                <form action="">
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">
+                <form onSubmit={handleSubmit} noValidate>
+                  <div className="mb-3">
+                    <label htmlFor="email-field" className="form-label">
                       Email <span className="text-danger">*</span>
                     </label>
                     <input
                       type="email"
-                      class="form-control"
+                      className={`form-control ${
+                        errors.email ? "is-invalid" : ""
+                      }`}
                       id="email-field"
-                      aria-describedby="emailHelp"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
+                    {errors.email && (
+                      <div className="invalid-feedback">{errors.email}</div>
+                    )}
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">
+
+                  <div className="mb-2">
+                    <label htmlFor="password" className="form-label">
                       Password <span className="text-danger">*</span>
                     </label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="password-field"
-                      aria-describedby="passwordHelp"
-                    />
-                    <div className="forgot-password text-end p-2">
-                      Forgot Password?
+                    <div className="input-group">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        className={`form-control ${
+                          errors.password ? "is-invalid" : ""
+                        }`}
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                      <span
+                        className="input-group-text"
+                        id="eye-pswd"
+                        onClick={togglePassword}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {!showPassword ? (
+                          <IoEyeOff size={12} color="#BCBEC0" />
+                        ) : (
+                          <IoEye size={12} color="#BCBEC0" />
+                        )}
+                      </span>
+                    </div>
+                    {errors.password && (
+                      <div className="invalid-feedback d-block">
+                        {errors.password}
+                      </div>
+                    )}
+
+                    <div className="text-end py-3">
+                      <Link
+                        to="/forgot-password"
+                        className="text-white text-decoration-none"
+                      >
+                        Forgot Password?
+                      </Link>
                     </div>
                   </div>
-                  <div className="sign-in-btn mb-3">
-                    <button className="btn btn-primary w-100">Sign in</button>
-                  </div>
-                  <div className="d-flex align-items-center justify-content-center mb-3">
-                    OR
-                  </div>
-                  <div className="google-sign-btn mb-3">
-                    <button className="d-flex justify-content-space btn btn-outline-primary w-100">
-                      <img src="images/google.svg" alt="google" />
-                      <span className="ps-5">Sign in</span>
+
+                  <div className="sign-in-btn mb-4">
+                    <button type="submit" className="btn btn-primary w-100">
+                      Sign in
                     </button>
                   </div>
-                  <div className="mb-3">
-                    Don't have an account yet ? Sign up
+
+                  <div className="d-flex align-items-center justify-content-center mb-4">
+                    <hr className="w-25" />
+                    <div className="px-2">OR</div>
+                    <hr className="w-25" />
                   </div>
-                  <div className="demo-btn mb-3">
-                    <button className="btn btn-outline-primary w-100">
+
+                  <div className="common-btn mb-4">
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary text-center w-100 position-relative"
+                    >
+                      <img
+                        className="position-absolute start-0 ms-3"
+                        src="images/google.svg"
+                        alt="google"
+                        width="20"
+                        height="20"
+                        style={{ top: "50%", transform: "translateY(-50%)" }}
+                      />
+                      <span className="w-100">Sign in</span>
+                    </button>
+                  </div>
+
+                  <div className="mb-4 text-center">
+                    Don't have an account yet?
+                    <Link to="/SignUp" className="text-white ms-1">
+                      Sign Up
+                    </Link>
+                  </div>
+
+                  <div className="common-btn mb-4">
+                    <Link className="btn btn-outline-primary w-100">
                       Try Demo
-                    </button>
+                    </Link>
                   </div>
                 </form>
               </div>
@@ -73,6 +156,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

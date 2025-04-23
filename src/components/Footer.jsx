@@ -2,9 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
+    <footer>
+      <h1 className="m-2" style={{ fontSize: "14px" }}>
+        © All Rights Reserved.
+      </h1>
+    </footer>
   );
 }
 
