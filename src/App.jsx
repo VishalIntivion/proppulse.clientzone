@@ -13,6 +13,7 @@ import History from "./pages/History";
 import Wallet from "./pages/Wallet";
 import Withdrawal from "./pages/Withdrawal";
 import Support from "./pages/Support";
+import Registration from "./pages/registration/Registration";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Registration />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home" element={<Layout />}>
             <Route index element={<Dashboard />} />

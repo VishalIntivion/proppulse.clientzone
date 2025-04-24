@@ -12,15 +12,15 @@ const Header = () => {
             <img src="/images/Logo.svg" alt="Logo" />
           </div>
           <div className="col-lg-10">
-            <div className="d-md-flex align-items-start">
+            <div className="d-md-flex align-items-center">
               <div className="prop-acc">
-                <div className="">Steve Smith</div>
+                <div className="p-2 ">Steve Smith</div>
                 <div className="bg-primary p-2 rounded">
                   <span>TP.NO.:</span>
                   <span>1820953734</span>
                 </div>
               </div>
-              <div className="balance-card w-100 p-2">
+              <div className="balance-card w-100">
                 <div className="d-md-flex border-end">
                   <div className="card">
                     <div className="card-body">
@@ -66,8 +66,10 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-1 text-md-end text-center">
-            <AiOutlinePoweroff />
+          <div className="col-lg-1 text-end">
+            <Link to="/">
+              <AiOutlinePoweroff fill="#FFFFFF" size={17} />
+            </Link>
           </div>
         </div>
       </div>

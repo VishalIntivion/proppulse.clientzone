@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LanguageDropdown from "./Language";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { validateLoginForm } from "../../utils/validationUtils";
 
 const Login = () => {
@@ -9,6 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
@@ -24,6 +26,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
+      navigate("/home");
       console.log("Form submitted with:", { email, password });
     }
   };

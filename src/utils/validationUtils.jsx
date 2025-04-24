@@ -6,9 +6,19 @@ export const validateEmail = (email) => {
 
 export const validateName = (name) => {
   // Supports English, Arabic, French, and Spanish characters
+  if (typeof name !== "string") return false;
+  const trimmedName = name.trim();
+  const words = trimmedName.split(/\s+/);
+  if (words.length < 2) return false;
+
   const regex =
-    /^[A-Za-z\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\u1E00-\u1EFFÀ-ÖØ-öø-ÿĀ-ž\u00C0-\u017F'’´` -]{2,}$/u;
-  return regex.test(name.trim());
+    /^[A-Za-z\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\u1E00-\u1EFFÀ-ÖØ-öø-ÿĀ-ž\u00C0-\u017F'’´`-]+$/u;
+
+  for (let word of words) {
+    if (word.length < 2 || !regex.test(word)) return false;
+  }
+  return true;
+  // return regex.test(name.trim());
 };
 
 export const validatePhoneNumber = (phone) => {
@@ -30,41 +40,33 @@ export const validateConfirmPassword = (password, confirmPassword) => {
 export const validateRegistrationForm = (formData) => {
   const errors = {};
 
-  if (formData.firstName) {
-    if (!validateName(formData.firstName)) {
-      errors.firstName = "Invalid first name";
-    }
+  if (!validateName(formData.fullName)) {
+    errors.fullName = "Invalid Full Name";
   }
 
-  if (formData.lastName) {
-    if (!validateName(formData.lastName)) {
-      errors.lastName = "Invalid last name";
-    }
+  if (!validateName(formData.firstName)) {
+    errors.firstName = "Invalid First Name";
   }
 
-  if (formData.email) {
-    if (!validateEmail(formData.email)) {
-      errors.email = "Invalid email address";
-    }
+  if (!validateName(formData.lastName)) {
+    errors.lastName = "Invalid last name";
   }
 
-  if (formData.phone) {
-    if (!validatePhoneNumber(formData.phone)) {
-      errors.phone = "Invalid phone number";
-    }
+  if (!validateEmail(formData.email)) {
+    errors.email = "Invalid Email Address";
   }
 
-  if (formData.password) {
-    if (!validatePassword(formData.password)) {
-      errors.password =
-        "Password must be 6–18 chars, with uppercase, lowercase, number, and special character";
-    }
+  if (!validatePhoneNumber(formData.phone)) {
+    errors.phone = "Invalid Phone Number";
   }
 
-  if (formData.confirmPassword) {
-    if (!validateConfirmPassword(formData.password, formData.confirmPassword)) {
-      errors.confirmPassword = "Passwords do not match";
-    }
+  if (!validatePassword(formData.password)) {
+    errors.password =
+      "Password must be 6–18 chars, with uppercase, lowercase, number, and special character";
+  }
+
+  if (!validateConfirmPassword(formData.password, formData.confirmPassword)) {
+    errors.confirmPassword = "Passwords do not match";
   }
 
   return errors;
