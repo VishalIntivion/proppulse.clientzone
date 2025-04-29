@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import MyChallenge from "./pages/MyChallenges";
 import History from "./pages/History";
 import Wallet from "./pages/Wallet";
