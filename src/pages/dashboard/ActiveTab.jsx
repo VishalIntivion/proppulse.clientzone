@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdOutlineNavigateNext } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const ActiveTab = () => {
   const challenges = [
@@ -107,7 +108,9 @@ const ActiveTab = () => {
                     <span className="value">{avgdailyprofit}</span>
                   </div>
                 </div>
-                <button>See More</button>
+                <button>
+                  <Link to="detail-proppulse">See More</Link>
+                </button>
               </div>
             </article>
           )

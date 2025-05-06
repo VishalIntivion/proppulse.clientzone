@@ -13,7 +13,7 @@ const Statistics = () => {
     <div>
       <div className="static-style">
         <div className="heading">Statistics</div>
-        <div className="stat-card d-flex flex-wrap gap-3">
+        <div className="stat-card d-flex flex-wrap gap-3 py-3">
           <div className="card flex-fill" style={style}>
             <div className="card-body">
               <span>No. of Trades</span>

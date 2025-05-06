@@ -153,6 +153,7 @@ body {
 
 .common-btn a {
   color: white;
+  text-decoration: none;
 }
 
 .common-btn span {
@@ -360,6 +361,10 @@ header .header-top .balance-card {
   margin: 10px;
   font-size: 14px;
   padding: 5px 10px;
+}
+
+.challenge button a {
+  text-decoration: none;
   color: white;
 }
 
@@ -433,7 +438,11 @@ header .header-top .balance-card {
   padding: 10px 20px;
   border: 1px solid #305689;
   border-radius: 12px;
-  background: linear-gradient(170deg, rgba(18, 18, 18, 0.1) 56.24%, #3395ff 200.33%);
+  background: linear-gradient(
+    170deg,
+    rgba(18, 18, 18, 0.1) 56.24%,
+    #3395ff 200.33%
+  );
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -456,14 +465,201 @@ header .header-top .balance-card {
   border-radius: 24px;
   background: #d9d9d9;
 }
-.col-card .content{
+.col-card .content {
   padding: 10px;
-  color: #A0AEC0;
+  color: #a0aec0;
   font-size: 16px;
 }
 .stats {
   border: 1px solid #a0aec0;
   background-image: linear-gradient(#050e1d 0%, #060a0e 100%);
   border-radius: 12px;
+  padding: 20px 15px;
+}
+
+/* Challenge Card */
+.challenge-card {
+  border: 1px solid #224667;
+  background: linear-gradient(
+    170deg,
+    rgba(18, 18, 18, 0.1) 56.24%,
+    #3395ff 200.33%
+  );
+  padding: 10px 15px;
+  border-radius: 12px;
+  height: 100%;
+}
+
+.challenge-card .challenge-heading {
+  font-size: 16px;
+}
+
+.challenge-card .challenge-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f3048;
+  border: 1px solid #32405e;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.challenge-card .challenge-head {
+  font-size: 14px;
+}
+
+.challenge-card .challenge-detail {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #305689;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 5px 0px;
+}
+/* .challenge-card input ~ .checkmark {
+  background-color: black !important;
+} */
+
+.challenge-body {
+  padding: 0px 10px;
+  margin: 0px 10px;
+}
+
+/* Chat Box Style */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-image: linear-gradient(rgb(18, 18, 18) 0%, rgb(51, 149, 255) 100%);
+  color: white;
+  font-size: 24px;
+  padding: 5px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1050;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-image 0.3s ease;
+}
+
+.chatbox-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1051;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox-header {
+  font-weight: bold;
+}
+
+.chatbox-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.chatbox-footer input {
+  flex: 1;
+}
+
+.buy-btn {
+  background-color: #3395ff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin: 10px 0px;
+  border: none;
+  color: white;
+}
+
+.buy-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.objectives-panel {
+  background: none;
+}
+
+.objectives-panel .card-header {
+  border-bottom: 1px solid #305689;
+}
+
+.objectives-panel .list-group .list-group-item {
+  background: none;
+  border-bottom: 1px solid #305689;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.milestone-content {
+  background-color: none;
+  text-align: center;
+  border: 1px solid #305689;
+  margin-top: 5px;
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+/* Buy Challenge Modal */
+.modal-content {
+  color: white;
+  background-image: linear-gradient(30deg, #121212 55%, #3395ff 170%);
+  border: 1px solid #3395ff;
+  border-radius: 32px;
+  outline: 0;
+}
+
+.modal-content .modal-body input {
+  background-color: #1f2e44;
+  border: 1px solid #224667;
+}
+
+.history-page {
+  margin: 10px 0px;
+  border: 1px solid #305689;
+  text-align: center;
   padding: 10px;
+  border-radius: 12px;
+  background-image: linear-gradient(175deg, #121212 55%, #3395ff 170%);
+}
+
+/* Wallet Page Styling */
+.wallet-page {
+  margin: 15px 0px;
+  background-color: #1b2028;
+  border-radius: 12px;
+  padding: 10px 20px;
+}
+
+.add-wallet {
+  background-color: #3395ff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  color: white;
+}
+
+.wallet-page .table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #252c37;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-size: 14px;
 }

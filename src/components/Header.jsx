@@ -8,8 +8,12 @@ const Header = () => {
     <header>
       <div className="header-top">
         <div className="row">
-          <div className="col-lg-1">
-            <img src="/images/Logo.svg" alt="Logo" />
+          <div className="col-lg-1 d-flex align-items-center justify-content-center">
+            <img
+              src="/images/Logo.svg"
+              alt="Logo"
+              className="img-fluid"
+            />
           </div>
           <div className="col-lg-10">
             <div className="d-md-flex align-items-center">

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./assets/App.css";
@@ -9,11 +8,13 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import MyChallenge from "./pages/MyChallenges";
-import History from "./pages/History";
-import Wallet from "./pages/Wallet";
+import History from "./pages/history/History";
+import Wallet from "./pages/wallet/Wallet";
 import Withdrawal from "./pages/Withdrawal";
 import Support from "./pages/Support";
 import Registration from "./pages/registration/Registration";
+import Proppage from "./pages/dashboard/ChallengeDetail";
+import FloatingChatBox from "./components/FloatingChatBox";
 
 const App = () => {
   return (
@@ -30,9 +31,11 @@ const App = () => {
             <Route path="wallet" element={<Wallet />} />
             <Route path="withdrawal" element={<Withdrawal />} />
             <Route path="support" element={<Support />} />
+            <Route path="detail-proppulse" element={<Proppage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
+      <FloatingChatBox/>
     </>
   );
 };
