@@ -663,3 +663,54 @@ header .header-top .balance-card {
   border-radius: 6px;
   font-size: 14px;
 }
+
+/* Withdrawal Page Styling */
+.withdrawal-page{
+  margin: 10px 0px;
+  border-radius: 12px;
+  background-color: #1B2028;
+  padding: 10px;
+}
+
+.withdrawal-body .nav-link{
+  background: none !important;
+  border: none !important;
+  padding: 0px;
+  color: #A0AEC0;
+  font-size: 12px;
+  font-weight: 100;
+}
+.withdrawal-body li{
+  margin: 10px 0px;
+}
+.withdrawal-body .nav-link.active{
+  color: white;
+  font-weight: bolder;
+  border-bottom: 1px solid #3395FF !important;
+}
+
+.withdrawal-req {
+  font-size: 12px;
+}
+
+.withdrawal-req li{
+  margin: 0px;
+}
+
+.withdrawal-req .payment-method{
+  background: #1B2028;
+  border: 1px solid #305689;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.withdrawal-req .payment-method .withdrawal-heading{
+  color: #3395FF;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.method-active{
+  background-image: linear-gradient(#121212 0%,#3395FF 100%);
+}

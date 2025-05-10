@@ -10,7 +10,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import MyChallenge from "./pages/MyChallenges";
 import History from "./pages/history/History";
 import Wallet from "./pages/wallet/Wallet";
-import Withdrawal from "./pages/Withdrawal";
+import Withdrawal from "./pages/Withdrawal/Withdrawal";
 import Support from "./pages/Support";
 import Registration from "./pages/registration/Registration";
 import Proppage from "./pages/dashboard/ChallengeDetail";
