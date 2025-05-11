@@ -87,13 +87,13 @@ body {
     padding-bottom: 0px !important;
   }
 
-  .navbar > .container,
-  .navbar > .container-fluid,
-  .navbar > .container-lg,
-  .navbar > .container-md,
-  .navbar > .container-sm,
-  .navbar > .container-xl,
-  .navbar > .container-xxl {
+  .navbar>.container,
+  .navbar>.container-fluid,
+  .navbar>.container-lg,
+  .navbar>.container-md,
+  .navbar>.container-sm,
+  .navbar>.container-xl,
+  .navbar>.container-xxl {
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -179,11 +179,11 @@ body {
   width: 85px;
 }
 
-.btn-check:checked + .btn,
+.btn-check:checked+.btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check) + .btn:active {
+:not(.btn-check)+.btn:active {
   color: var(--bs-btn-active-color);
   background: #3395ff;
   border-color: var(--bs-btn-active-border-color);
@@ -202,6 +202,7 @@ header {
   background-color: #1b2028;
   border-radius: 12px;
 }
+
 header .header-top {
   padding: 15px;
 }
@@ -278,6 +279,7 @@ header .header-top .balance-card {
   border-bottom: 2px solid #3395ff;
   margin: 7px;
 }
+
 .active-icon {
   background-image: linear-gradient(#121212 0%, #3395ff 100%) !important;
 }
@@ -330,11 +332,9 @@ header .header-top .balance-card {
 .challenges-detail .challenge {
   border-radius: 12px;
   border: 0.75px solid #305689;
-  background: linear-gradient(
-    147deg,
-    rgba(18, 18, 18, 0.1) 56.24%,
-    #3395ff 138.33%
-  );
+  background: linear-gradient(147deg,
+      rgba(18, 18, 18, 0.1) 56.24%,
+      #3395ff 138.33%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -402,7 +402,7 @@ header .header-top .balance-card {
 }
 
 .challenges-detail .status .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #3395ff;
   background: none !important;
   border-bottom: 1px solid #3395ff;
@@ -433,16 +433,15 @@ header .header-top .balance-card {
   border-radius: 5px;
   margin: 0px 20px;
 }
+
 .col-card {
   margin: 20px 0px;
   padding: 10px 20px;
   border: 1px solid #305689;
   border-radius: 12px;
-  background: linear-gradient(
-    170deg,
-    rgba(18, 18, 18, 0.1) 56.24%,
-    #3395ff 200.33%
-  );
+  background: linear-gradient(170deg,
+      rgba(18, 18, 18, 0.1) 56.24%,
+      #3395ff 200.33%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -465,11 +464,13 @@ header .header-top .balance-card {
   border-radius: 24px;
   background: #d9d9d9;
 }
+
 .col-card .content {
   padding: 10px;
   color: #a0aec0;
   font-size: 16px;
 }
+
 .stats {
   border: 1px solid #a0aec0;
   background-image: linear-gradient(#050e1d 0%, #060a0e 100%);
@@ -480,11 +481,9 @@ header .header-top .balance-card {
 /* Challenge Card */
 .challenge-card {
   border: 1px solid #224667;
-  background: linear-gradient(
-    170deg,
-    rgba(18, 18, 18, 0.1) 56.24%,
-    #3395ff 200.33%
-  );
+  background: linear-gradient(170deg,
+      rgba(18, 18, 18, 0.1) 56.24%,
+      #3395ff 200.33%);
   padding: 10px 15px;
   border-radius: 12px;
   height: 100%;
@@ -518,6 +517,7 @@ header .header-top .balance-card {
   color: #ffffff;
   padding: 5px 0px;
 }
+
 /* .challenge-card input ~ .checkmark {
   background-color: black !important;
 } */
@@ -665,14 +665,14 @@ header .header-top .balance-card {
 }
 
 /* Withdrawal Page Styling */
-.withdrawal-page{
+.withdrawal-page {
   margin: 10px 0px;
   border-radius: 12px;
   background-color: #1B2028;
   padding: 10px;
 }
 
-.withdrawal-body .nav-link{
+.withdrawal-body .nav-link {
   background: none !important;
   border: none !important;
   padding: 0px;
@@ -680,10 +680,12 @@ header .header-top .balance-card {
   font-size: 12px;
   font-weight: 100;
 }
-.withdrawal-body li{
+
+.withdrawal-body li {
   margin: 10px 0px;
 }
-.withdrawal-body .nav-link.active{
+
+.withdrawal-body .nav-link.active {
   color: white;
   font-weight: bolder;
   border-bottom: 1px solid #3395FF !important;
@@ -693,11 +695,11 @@ header .header-top .balance-card {
   font-size: 12px;
 }
 
-.withdrawal-req li{
+.withdrawal-req li {
   margin: 0px;
 }
 
-.withdrawal-req .payment-method{
+.withdrawal-req .payment-method {
   background: #1B2028;
   border: 1px solid #305689;
   padding: 10px;
@@ -705,12 +707,12 @@ header .header-top .balance-card {
   font-size: 12px;
 }
 
-.withdrawal-req .payment-method .withdrawal-heading{
+.withdrawal-req .payment-method .withdrawal-heading {
   color: #3395FF;
   font-size: 15px;
   margin-left: 5px;
 }
 
-.method-active{
-  background-image: linear-gradient(#121212 0%,#3395FF 100%);
+.payment-method.active {
+  background-image: linear-gradient(170deg, rgba(18, 18, 18, 0.1) 56.24%, #3395ff 200.33%);
 }
