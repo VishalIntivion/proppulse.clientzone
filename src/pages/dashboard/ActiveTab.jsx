@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { GrFormPrevious } from "react-icons/gr";
-import { MdOutlineNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Pagination from "../../components/Pagination";
 
 const ActiveTab = () => {
   const challenges = [
@@ -54,20 +53,12 @@ const ActiveTab = () => {
       maxprofit: "10%",
       avgdailyprofit: "$30",
     },
-    {
-      name: "Maverick Trader Challenge",
-      amt: "$10,000",
-      target: "10%",
-      maxprofit: "10%",
-      avgdailyprofit: "$30",
-    },
   ];
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 2;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(challenges.length / itemsPerPage);
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentChallenges = challenges.slice(
     startIndex,
@@ -84,7 +75,7 @@ const ActiveTab = () => {
 
   return (
     <div>
-      <section className="d-md-flex align-items-start justify-content-md-start justify-content-center">
+      <section className="d-md-flex align-items-start justify-content-md-start justify-content-center flex-wrap gap-3">
         {currentChallenges.map(
           ({ name, amt, target, maxprofit, avgdailyprofit }, index) => (
             <article className="challenge" key={index}>
@@ -117,25 +108,13 @@ const ActiveTab = () => {
         )}
       </section>
 
-      {/* Pagination Controls */}
-      <div className="pagination-controls mt-4 d-flex justify-content-md-start justify-content-center">
-        <button
-          onClick={handlePrev}
-          disabled={currentPage === 1}
-          className={currentPage !== 1 ? "button-enabled" : ""}
-        >
-          <GrFormPrevious fill="#1F263E" />
-        </button>
-        {/* #1F263E */}
-        <span>{currentPage}</span>
-        <button
-          onClick={handleNext}
-          disabled={currentPage === totalPages}
-          className={currentPage !== totalPages ? "button-enabled" : ""}
-        >
-          <MdOutlineNavigateNext fill="white" />
-        </button>
-      </div>
+      {/* Separated Pagination Component */}
+      <Pagination
+        currentpage={currentPage}
+        totalpages={totalPages}
+        onnext={handleNext}
+        onprev={handlePrev}
+      />
     </div>
   );
 };

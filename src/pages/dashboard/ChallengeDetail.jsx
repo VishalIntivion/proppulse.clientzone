@@ -369,7 +369,7 @@ const ChallengeDetail = () => {
                   Policy
                 </label>
               </div>
-              <Button className="buy-btn w-100">Buy</Button>
+              <Button className="buy-btn w-100">Buy Challenges</Button>
             </div>
           </div>
         </Modal.Body>

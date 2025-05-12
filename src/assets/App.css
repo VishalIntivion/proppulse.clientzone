@@ -425,7 +425,7 @@ header .header-top .balance-card {
   padding: 10px 20px;
 }
 
-.daily-loss-limit .timestamp {
+.timestamp {
   border: 1px solid #305689;
   background-image: linear-gradient(#1b2028 0%, #3a3a3a 100%);
   padding: 2px 10px;
@@ -621,9 +621,10 @@ header .header-top .balance-card {
   outline: 0;
 }
 
-.modal-content .modal-body input {
+.modal-content .modal-body input{
   background-color: #1f2e44;
   border: 1px solid #224667;
+  color: white;
 }
 
 .history-page {
@@ -651,6 +652,7 @@ header .header-top .balance-card {
   font-size: 12px;
   border: none;
   color: white;
+  width: 100px;
 }
 
 .wallet-page .table-head {
@@ -662,4 +664,139 @@ header .header-top .balance-card {
   margin-top: 15px;
   border-radius: 6px;
   font-size: 14px;
+}
+
+/* Modal Style */
+
+.wallet-modal .modal-content .modal-body input, select{
+  background-color: #1f2e44;
+  border: 1px solid #224667;
+  color: white;
+  width: 100%;
+  padding: 5px 3px;
+  border-radius: 5px;
+}
+
+.wallet-modal .modal-content .modal-body .sub-btn{
+  width: 100%;
+  border-radius: 5px; 
+  padding: 5px 3px;
+  color: white;
+  background-color: #3395FF;
+  margin: 10px 0px;
+  border: none;
+}
+
+.wallet-modal .modal-content .modal-body .reset-btn{
+  width: 100%;
+  border-radius: 5px; 
+  padding: 5px 3px;
+  color: white;
+  background-color: #0F1A29;
+  margin: 10px 0px 10px 10px;
+  border: 1px solid #0256B2;
+}
+
+/* My Challenge Page */
+.my_challenge{
+  padding: 10px 20px;
+  margin: 10px 0px;
+  background: #1B2028;
+  border-radius: 12px;
+}
+
+.ch-heading{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*  */
+.challenge-card {
+  background-color: #1c1f2a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challenge-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.level-badge {
+  background-color: #2e3347;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 14px;
+}
+
+.challenge-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+.info-block {
+  flex: 1;
+  min-width: 180px;
+}
+
+.start-date {
+  background-color: #2e3347;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.metric-card {
+  flex: 1;
+  min-width: 200px;
+  background: linear-gradient(to bottom right, #1c1f2a, #1c1f2a);
+  border-radius: 12px;
+  padding: 15px;
+  position: relative;
+}
+
+.metric-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.graph-placeholder {
+  height: 40px;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.arrow-btn {
+  background-color: #1f263e;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.arrow-btn:hover {
+  background-color: #27314f;
 }
