@@ -7,7 +7,7 @@ import Login from "./pages/login/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
-import MyChallenge from "./pages/MyChallenges";
+import MyChallenge from "./pages/mychallenge/MyChallenges";
 import History from "./pages/history/History";
 import Wallet from "./pages/wallet/Wallet";
 import Withdrawal from "./pages/Withdrawal/Withdrawal";
@@ -15,6 +15,7 @@ import Support from "./pages/Support";
 import Registration from "./pages/registration/Registration";
 import Proppage from "./pages/dashboard/ChallengeDetail";
 import FloatingChatBox from "./components/FloatingChatBox";
+import MyChallengeDetail from "./pages/mychallenge/MyChallengeDetail";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="withdrawal" element={<Withdrawal />} />
             <Route path="support" element={<Support />} />
             <Route path="detail-proppulse" element={<Proppage/>}/>
+            <Route path="my-challenge-detail" element={<MyChallengeDetail/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
