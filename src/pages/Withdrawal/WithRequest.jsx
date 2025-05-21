@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
+import { Form, Row, Col, Button } from "react-bootstrap";
 
 const WithRequest = () => {
     const [activeMethod, setActiveMethod] = useState('card');
@@ -81,27 +82,73 @@ const WithRequest = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="">
-                        <form action="">
-                            <div className="d-flex align-items-center justify-content-between">
-                                <label htmlFor="">Account Id</label>
-                                <input type="text" />
-                                <label htmlFor="">Withdrawal Method</label>
-                                <input type="text" />
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <label htmlFor="">Card Holder Name</label>
-                                <input type="text" />
-                                <label htmlFor="">Credit Card Number</label>
-                                <input type="text" />
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <label htmlFor="">Amount</label>
-                                <input type="text" />
-                                <label htmlFor="">Select Month And Year</label>
-                                <input type="text" />
-                            </div>
-                        </form>
+                    <div className="mt-4">
+                        <div className="withdrawal-form-container">
+                            <Form>
+                                <Row className="mb-3">
+                                    <Col md={6}>
+                                        <Form.Group controlId="accountId">
+                                            <Form.Label>Account Id</Form.Label>
+                                            <Form.Select>
+                                                <option>Account Id</option>
+                                            </Form.Select>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={6}>
+                                        <Form.Group controlId="withdrawalMethod">
+                                            <Form.Label>Withdrawal Method</Form.Label>
+                                            <Form.Select>
+                                                <option>Credit Card</option>
+                                            </Form.Select>
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+
+                                <Row className="mb-3">
+                                    <Col md={6}>
+                                        <Form.Group controlId="cardHolderName">
+                                            <Form.Label>Card Holder Name</Form.Label>
+                                            <Form.Control type="text" placeholder="Card Holder Name" />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={6}>
+                                        <Form.Group controlId="creditCardNumber">
+                                            <Form.Label>Credit Card Number</Form.Label>
+                                            <Form.Control type="text" placeholder="Credit Card Number" />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+
+                                <Row className="mb-3">
+                                    <Col md={6}>
+                                        <Form.Group controlId="amount">
+                                            <Form.Label>Amount</Form.Label>
+                                            <Form.Control type="text" placeholder="Amount" />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={3}>
+                                        <Form.Group controlId="month">
+                                            <Form.Label>Select Month</Form.Label>
+                                            <Form.Select>
+                                                <option>MM</option>
+                                            </Form.Select>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={3}>
+                                        <Form.Group controlId="year">
+                                            <Form.Label>Select Year</Form.Label>
+                                            <Form.Select>
+                                                <option>YYYY</option>
+                                            </Form.Select>
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+
+                                <div className="text-end">
+                                    <Button variant="primary">Request a Withdrawal</Button>
+                                </div>
+                            </Form>
+                        </div>
                     </div>
                 </div>
                 <div className="col-lg-6">
